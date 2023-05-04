@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">HomeGame</string>
     <string name="next_word">Next Word</string>
+    <string name="correct_word">Correct Word</string>
+    <string name="points_label">Points:</string>
+    <string name="point_initial_value">0</string>
+    <string name="points_reset">Points Reset</string>
 </resources>

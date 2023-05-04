@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         "Palmeira"
     )
     private val lastWord: String = wordList.random()
+    private var initialPoint: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,16 @@ class MainActivity : AppCompatActivity() {
         binding.gameText.text = lastWord
 
         binding.gameNextButton.setOnClickListener {
+            binding.gameText.text = showNextWord(wordList, lastWord)
+        }
+        binding.gameCorrectButton.setOnClickListener {
+            initialPoint += 1
+            binding.gamePointValue.text = initialPoint.toString()
+            binding.gameText.text = showNextWord(wordList, lastWord)
+        }
+        binding.gameResetButton.setOnClickListener {
+            initialPoint = 0
+            binding.gamePointValue.text = initialPoint.toString()
             binding.gameText.text = showNextWord(wordList, lastWord)
         }
     }
